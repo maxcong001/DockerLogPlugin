@@ -2,6 +2,7 @@
 
 Docker Logging Plugin allows docker containers to send their logs to your own log server.
 
+## build status --> [![Build Status](https://travis-ci.org/maxcong001/dockerlogplugin.svg?branch=master)](https://travis-ci.org/maxcong001/dockerlogplugin)
 ## Getting Started
 
 You need to install Docker Engine >= 1.12.
