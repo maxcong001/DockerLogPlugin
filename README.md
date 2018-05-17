@@ -32,13 +32,13 @@ docker plugin ls
 This command will pull and enable the plugin
 
 ### Using
-
-
-
+```
+docker plugin enable ${PLUGIN_NAME}:${PLUGIN_TAG}
+```
 
 #### Example
 
 ```
-$ docker run --log-driver=dockerlogplugin
+$ docker run --log-driver=dockerlogplugin:latest
 
 ```
