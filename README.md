@@ -33,7 +33,7 @@ This command will pull and enable the plugin
 
 ### Using
 ```
-docker plugin enable ${PLUGIN_NAME}:${PLUGIN_TAG}
+docker plugin enable dockerlogplugin:latest
 ```
 
 #### Example
