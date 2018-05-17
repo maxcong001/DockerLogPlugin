@@ -21,6 +21,7 @@ import (
 )
 
 /*
+new docker version:
 https://github.com/docker/docker-ce/blob/master/components/engine/api/types/backend/backend.go
 type LogMessage struct {
 	Line         []byte
@@ -29,6 +30,20 @@ type LogMessage struct {
 	Attrs        []LogAttr
 	PLogMetaData *PartialLogMetaData
 // Max: new version of docker change the definition
+	// Err is an error associated with a message. Completeness of a message
+	// with Err is not expected, tho it may be partially complete (fields may
+	// be missing, gibberish, or nil)
+	Err error
+}
+old version
+
+type LogMessage struct {
+	Line      []byte
+	Source    string
+	Timestamp time.Time
+	Attrs     []LogAttr
+	Partial   bool
+
 	// Err is an error associated with a message. Completeness of a message
 	// with Err is not expected, tho it may be partially complete (fields may
 	// be missing, gibberish, or nil)
