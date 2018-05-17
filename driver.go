@@ -20,6 +20,31 @@ import (
 	"github.com/tonistiigi/fifo"
 )
 
+/*
+https://github.com/docker/docker-ce/blob/master/components/engine/api/types/backend/backend.go
+type LogMessage struct {
+	Line         []byte
+	Source       string
+	Timestamp    time.Time
+	Attrs        []LogAttr
+	PLogMetaData *PartialLogMetaData
+// Max: new version of docker change the definition
+	// Err is an error associated with a message. Completeness of a message
+	// with Err is not expected, tho it may be partially complete (fields may
+	// be missing, gibberish, or nil)
+	Err error
+}
+
+https://github.com/docker/docker-ce/blob/master/components/engine/api/types/plugins/logdriver/entry.pb.go
+type LogEntry struct {
+	Source   string `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
+	TimeNano int64  `protobuf:"varint,2,opt,name=time_nano,json=timeNano,proto3" json:"time_nano,omitempty"`
+	Line     []byte `protobuf:"bytes,3,opt,name=line,proto3" json:"line,omitempty"`
+	Partial  bool   `protobuf:"varint,4,opt,name=partial,proto3" json:"partial,omitempty"`
+}
+
+*/
+
 type driver struct {
 	mu     sync.Mutex
 	logs   map[string]*logPair
