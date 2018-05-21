@@ -35,4 +35,4 @@ install:
   #- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install ccache; fi
 
 
-script: make&&make enable&&docker plugin ls&&ps afx
+script: make&&make enable&&docker plugin ls&&ps afx&&docker ps
