@@ -1,6 +1,13 @@
 # Docker Log-driver plugin for Docker
+## Docker Logging overview
 
-Docker Logging Plugin allows docker containers to send their logs to your own log server.
+Docker Logging drivers enables users to forward container logs to another service for processing. Docker includes several logging drivers as built-ins(jsonfile, syslog, journal, gelf, fluentd, awslogs, splunk, etwlogs, gcplogs), however can never hope to support all use-cases with built-in drivers. 
+
+Plugins allow Docker to support a wide range of logging services without requiring to embed client libraries for these services in the main Docker codebase. 
+
+Holocene is a Docker log plugin. If Holocene is enabled, Docker daemon start a new  special container. In the container, a restful server is started.
+When a new container starts, Docker daemon send restful message to the plugin with log stream path and other info(like container id), then Holocene create a new go routine and do the processing work, then dispatch the message to the remote log server.
+
 
 ## build status --> [![Build Status](https://travis-ci.org/maxcong001/dockerlogplugin.svg?branch=master)](https://travis-ci.org/maxcong001/dockerlogplugin)
 ## Getting Started
