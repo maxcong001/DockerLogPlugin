@@ -43,6 +43,18 @@ $ docker run --log-driver=dockerlogplugin:latest
 
 ```
 
+## compare to fluentd
+
+
+Compared to fluentd:
+1. No extra container is needed.
+2. Fluentd container receive all the message form containers, which will become bottom-neck of the system if message flood comes.
+Holocene(go routine) has the same life cycle with container.
+3. Fluentd build-in driver is a go-routine started by dockerd, so there may be impact on dockerd for stability, but Holocene is a separate container, it has no impact on dockerd.
+4. Have the same feature as fluentd(filter, routing)
+5. Written by go/C,C++ with high performance, fluentd is written by Ruby    
+……                                                                   
+
 ## compare to fluent-bit
 
 ### advantage
@@ -58,3 +70,6 @@ discription | Holocene | fluent-bit
 discription | Holocene | fluent-bit
 ------------- | ------------------- | ----
 programmable Holocene  | Start a REST-FUL server for configuration, which can receive config change run-time and do related work. | no such function
+
+
+
