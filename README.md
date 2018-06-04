@@ -12,10 +12,9 @@ When a new container starts, Docker daemon send restful message to the plugin wi
 Holocene plugin system:
 
 Holocene plugin system is inspired by Redis. Redis have feature named "module" in its latest version.
-Holocene will open some key APIs to user, to develop a new plugin, you just need to implement these ideas.
-If any user want their special requirement. He can impelment the logic and build out a dynamic library then tell Holocene in the confiuration.
+Holocene will open some key APIs to user. to develop a new plugin, you just need to implement these ideas. You can impelment the logic and build out a dynamic library then tell Holocene in the confiuration. In the phase 2 of Holocene, it will have CLI interface and REST-FUL API.
 
-Holocene will support two kind of plugin:
+Holocene will support two kinds of plugin:
 1. filter plugin. By default is: Regular expression
 2. output plugin. By default TCP
 
