@@ -1,4 +1,4 @@
-# Docker Log-driver plugin for Docker
+# Holocene
 ## overview
 Docker Logging Plugin allows docker containers, filter log, then send their logs to your own log server.
 #### build-in docker log driver
