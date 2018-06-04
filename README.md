@@ -1,4 +1,7 @@
 # Holocene
+## build status --> [![Build Status](https://travis-ci.org/maxcong001/dockerlogplugin.svg?branch=master)](https://travis-ci.org/maxcong001/dockerlogplugin)
+
+
 ## overview
 Docker Logging Plugin allows docker containers, filter log, then send their logs to your own log server.
 #### build-in docker log driver
@@ -18,7 +21,7 @@ Holocene will support two kinds of plugin:
 1. filter plugin. By default is: Regular expression
 2. output plugin. By default TCP
 
-## build status --> [![Build Status](https://travis-ci.org/maxcong001/dockerlogplugin.svg?branch=master)](https://travis-ci.org/maxcong001/dockerlogplugin)
+
 ## Getting Started
 
 You need to install Docker Engine >= 1.12.
