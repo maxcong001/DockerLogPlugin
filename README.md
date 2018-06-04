@@ -9,6 +9,15 @@ Plugins allow Docker to support a wide range of logging services without requiri
 Holocene is a Docker log plugin. If Holocene is enabled, Docker daemon start a new  special container. In the container, a restful server is started.
 When a new container starts, Docker daemon send restful message to the plugin with log stream path and other info(like container id), then Holocene create a new go routine and do the processing work, then dispatch the message to the remote log server.
 
+Holocene plugin system:
+
+Holocene plugin system is inspired by Redis. Redis have feature named "module" in its latest version.
+Holocene will open some key APIs to user, to develop a new plugin, you just need to implement these ideas.
+If any user want their special requirement. He can impelment the logic and build out a dynamic library then tell Holocene in the confiuration.
+
+Holocene will support two kind of plugin:
+1. filter plugin. By default is: Regular expression
+2. output plugin. By default TCP
 
 ## build status --> [![Build Status](https://travis-ci.org/maxcong001/dockerlogplugin.svg?branch=master)](https://travis-ci.org/maxcong001/dockerlogplugin)
 ## Getting Started
