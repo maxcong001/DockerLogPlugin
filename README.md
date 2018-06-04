@@ -1,5 +1,5 @@
 # Docker Log-driver plugin for Docker
-## Docker Logging overview
+## overview
 
 Docker Logging drivers enables users to forward container logs to another service for processing. Docker includes several logging drivers as built-ins(jsonfile, syslog, journal, gelf, fluentd, awslogs, splunk, etwlogs, gcplogs), however can never hope to support all use-cases with built-in drivers. 
 
