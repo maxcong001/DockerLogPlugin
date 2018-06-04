@@ -79,14 +79,14 @@ Holocene(go routine) has the same life cycle with container.
 ### advantage
 #### PH1
 
-discription | Holocene | fluent-bit
+description | Holocene | fluent-bit
 ------------- | ------------------- | ----
  more Flexible|just realize the API, build dynamic lib, then pass the lib path in the configuration. For user, just need to focus on the logic | need to build special image if you add new driver  | 
  more stable |docker-deamon just send REST-FUL API message to tell the plugin container what to do, if plugin crash, has little affect to docker-d | for fluent build-in docker driver, if driver crash, it will have bad effect on docker-d
  high performance  | 1. get docker log data directly form container.     2 no need to pack/unpack log message | 1. get log data from container.     2. pack log message.     3. send to fluent-bit container.     4. Fluent-bit container receive the message and unpack it, then do the following logic
  health life cycle   | Holocene has the same life cycle with docker-d|need to start a special container and should take care the life cycle of this container    
 #### PH2
-discription | Holocene | fluent-bit
+description | Holocene | fluent-bit
 ------------- | ------------------- | ----
 programmable Holocene  | Start a REST-FUL server for configuration, which can receive config change run-time and do related work. | no such function
 
