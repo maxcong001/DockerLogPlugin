@@ -45,7 +45,7 @@ $ docker run --log-driver=dockerlogplugin:latest
 
 ## compare to fluentd
 
-
+[![compare to fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocenevsfluentd.PNG)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocenevsfluentd.PNG)
 Compared to fluentd:
 1. No extra container is needed.
 2. Fluentd container receive all the message form containers, which will become bottom-neck of the system if message flood comes.
