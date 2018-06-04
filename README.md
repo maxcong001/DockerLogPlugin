@@ -1,6 +1,6 @@
 # Docker Log-driver plugin for Docker
 ## overview
-Docker Logging Plugin allows docker containers filter log, then send their logs to your own log server.
+Docker Logging Plugin allows docker containers, filter log, then send their logs to your own log server.
 #### build-in docker log driver
 Docker Logging drivers enables users to forward container logs to another service for processing. Docker includes several logging drivers as built-ins(jsonfile, syslog, journal, gelf, fluentd, awslogs, splunk, etwlogs, gcplogs), however can never hope to support all use-cases with built-in drivers. 
 #### docker plugin system
@@ -12,7 +12,7 @@ When a new container starts, Docker daemon send restful message to the plugin wi
 Holocene plugin system:
 
 Holocene plugin system is inspired by Redis. Redis have feature named "module" in its latest version.
-Holocene will open some key APIs to user. to develop a new plugin, you just need to implement these ideas. You can impelment the logic and build out a dynamic library then tell Holocene in the confiuration. In the phase 2 of Holocene, it will have CLI interface and REST-FUL API.
+Holocene will open some key APIs to user. to develop a new plugin, you just need to implement these APIs. You can impelment the logic and build out a dynamic library then tell Holocene in the confiuration. In the phase 2 of Holocene, it will have CLI interface and REST-FUL API.
 
 Holocene will support two kinds of plugin:
 1. filter plugin. By default is: Regular expression
