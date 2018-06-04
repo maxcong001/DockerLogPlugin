@@ -3,7 +3,7 @@
 
 
 ## overview
-Docker Logging Plugin allows docker containers, filter log, then send their logs to your own log server.
+Holocene allows docker containers, filter log, then send their logs to your own log server.
 #### build-in docker log driver
 Docker Logging drivers enables users to forward container logs to another service for processing. Docker includes several logging drivers as built-ins(jsonfile, syslog, journal, gelf, fluentd, awslogs, splunk, etwlogs, gcplogs), however can never hope to support all use-cases with built-in drivers. 
 #### docker plugin system
