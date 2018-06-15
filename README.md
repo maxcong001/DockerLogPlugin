@@ -67,8 +67,8 @@ $ docker run --log-driver=dockerlogplugin:latest
 
 ## compare to fluentd
 ### what is fluentd    
-
-[![what is fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)    
+[![compare to fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)
+  
 
 Fluentd has a docker build-in driver called “fluentd”. 
 This driver collect log message, packet them and send them to fluentd-container. 
