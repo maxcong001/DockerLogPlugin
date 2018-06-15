@@ -67,7 +67,7 @@ $ docker run --log-driver=dockerlogplugin:latest
 
 ## compare to fluentd
 ### what is fluentd    
-[![compare to fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)
+[![what is fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)
   
 
 Fluentd has a docker build-in driver called “fluentd”. 
