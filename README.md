@@ -72,7 +72,7 @@ Fluentd has a docker build-in driver called “fluentd”.
 This driver collect log message, packet them and send them to fluentd-container. 
 Fluentd container will filter/routing the message 
 
-fluentd homepage: https://www.fluentd.org/
+fluentd homepage: [https://www.fluentd.org/](https://www.fluentd.org/)
 
 ### fluentd vs holocene
 [![compare to fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocenevsfluentd.PNG)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocenevsfluentd.PNG)
@@ -90,7 +90,7 @@ Holocene(go routine) has the same life cycle with container.
 ### what is fluent-bit
 Fluent-bit use docker build-in log driver called "fluentd" and do the same work as fluentd. 
 Fluent bit is written by C language with high performance compared to fluentd, but less flexible.
-
+fluent-bit homepage: [https://fluentbit.io/](https://fluentbit.io/)
 ### advantage
 #### PH1
 
