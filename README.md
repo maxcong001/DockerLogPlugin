@@ -30,8 +30,8 @@ Holocene will support two kinds of plugin:
 4. enable the plugin : docker plugin enable dockerlogplugin:latest
 5. start a docker with the plugin : docker run --log-driver=dockerlogplugin:latest    
 
-Note: When a plugin is first referred to -- either by a user referring to it by name (e.g. docker run --volume-driver=foo) or a container already configured to use a plugin being started -- Docker looks for the named plugin in the plugin directory and activates it with a handshake.   
-Plugins are not activated automatically at Docker daemon startup. Rather, they are activated only lazily, or on-demand, when they are needed.    
+*Note: When a plugin is first referred to -- either by a user referring to it by name (e.g. docker run --volume-driver=foo) or a container already configured to use a plugin being started -- Docker looks for the named plugin in the plugin directory and activates it with a handshake.   
+Plugins are not activated automatically at Docker daemon startup. Rather, they are activated only lazily, or on-demand, when they are needed.*      
 or use systemd to active plugin:    
 Plugins may also be socket activated by systemd. The official Plugins helpers natively supports socket activation. In order for a plugin to be socket activated it needs a service file and a socket file.
 
