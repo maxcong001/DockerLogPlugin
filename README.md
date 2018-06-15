@@ -3,7 +3,7 @@
 
 
 ## overview
-Holocene allows docker containers, filter log, then send their logs to your own log server.
+Holocene allows docker containers collect log, filter log, then send their logs to your own log server.
 
 [![Holocene](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocene-flow.PNG)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocene-flow.PNG)    
 
@@ -23,7 +23,44 @@ Holocene will open some key APIs to user. to develop a new plugin, you just need
 Holocene will support two kinds of plugin:
 1. filter plugin. By default is: Regular expression
 2. output plugin. By default TCP
+## how to use Holocene
+1. prepare your plugin 
+2. docker push your plugin to your own registory or official docker hub
+3. docker plugin install dockerlogplugin:latest, it will atumaitcly download the plugin
+4. enable the plugin : docker plugin enable dockerlogplugin:latest
+5. start a docker with the plugin : docker run --log-driver=dockerlogplugin:latest
+Note: When a plugin is first referred to -- either by a user referring to it by name (e.g. docker run --volume-driver=foo) or a container already configured to use a plugin being started -- Docker looks for the named plugin in the plugin directory and activates it with a handshake. See Handshake API below.    
+Plugins are not activated automatically at Docker daemon startup. Rather, they are activated only lazily, or on-demand, when they are needed.
+or use systemd to active plugin:
+Plugins may also be socket activated by systemd. The official Plugins helpers natively supports socket activation. In order for a plugin to be socket activated it needs a service file and a socket file.
 
+The service file (for example /lib/systemd/system/your-plugin.service):
+```
+[Unit]
+Description=Your plugin
+Before=docker.service
+After=network.target your-plugin.socket
+Requires=your-plugin.socket docker.service
+
+[Service]
+ExecStart=/usr/lib/docker/your-plugin
+
+[Install]
+WantedBy=multi-user.target
+```
+The socket file (for example /lib/systemd/system/your-plugin.socket):
+```
+[Unit]
+Description=Your plugin
+
+[Socket]
+ListenStream=/run/docker/plugins/your-plugin.sock
+
+[Install]
+WantedBy=sockets.target
+```
+This will allow plugins to be actually started when the Docker daemon connects to the sockets they’re listening on (for instance the first time the daemon uses them or if one of the plugin goes down accidentally).
+more detail about how to active plugin, see : [https://docs.docker.com/engine/extend/plugin_api/#plugin-activation](https://docs.docker.com/engine/extend/plugin_api/#plugin-activation)
 
 ## Getting Started
 
