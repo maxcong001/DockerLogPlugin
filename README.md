@@ -4,6 +4,9 @@
 
 ## overview
 Holocene allows docker containers, filter log, then send their logs to your own log server.
+
+[![Holocene](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocene-flow.PNG)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocene-flow.PNG)    
+
 #### build-in docker log driver
 Docker Logging drivers enables users to forward container logs to another service for processing. Docker includes several logging drivers as built-ins(jsonfile, syslog, journal, gelf, fluentd, awslogs, splunk, etwlogs, gcplogs), however can never hope to support all use-cases with built-in drivers. 
 #### docker plugin system
@@ -63,7 +66,15 @@ $ docker run --log-driver=dockerlogplugin:latest
 ```
 
 ## compare to fluentd
+### what is fluentd
+[!what is fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/what-is-fluentd.png)
+Fluentd has a docker build-in driver called “fluentd”. 
+This driver collect log message, packet them and send them to fluentd-container. 
+Fluentd container will filter/routing the message 
 
+fluentd homepage: https://www.fluentd.org/
+
+### fluentd vs holocene
 [![compare to fluentd](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocenevsfluentd.PNG)](https://github.com/maxcong001/dockerlogplugin/blob/master/doc/image/holocenevsfluentd.PNG)
 Compared to fluentd:
 1. No extra container is needed.
@@ -75,6 +86,10 @@ Holocene(go routine) has the same life cycle with container.
 ……                                                                   
 
 ## compare to fluent-bit
+
+### what is fluent-bit
+Fluent-bit use docker build-in log driver called "fluentd" and do the same work as fluentd. 
+Fluent bit is written by C language with high performance compared to fluentd, but less flexible.
 
 ### advantage
 #### PH1
